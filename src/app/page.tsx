@@ -1,4 +1,5 @@
 import Hero from '@/components/hero';
+import { Feature117 } from '@/components/projects';
 import Services from '@/components/services';
 
 const Page = () => {
@@ -6,6 +7,7 @@ const Page = () => {
         <div>
             <Hero />
             <Services />
+            <Feature117 />
         </div>
     );
 };
