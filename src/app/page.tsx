@@ -1,5 +1,11 @@
+import Hero from '@/components/hero';
+
 const Page = () => {
-    return <div> landing page</div>;
+    return (
+        <div>
+            <Hero />
+        </div>
+    );
 };
 
 export default Page;
