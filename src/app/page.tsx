@@ -1,5 +1,6 @@
 import Hero from '@/components/hero';
-import { Feature117 } from '@/components/projects';
+import Logos from '@/components/logos';
+import Projects from '@/components/projects';
 import Services from '@/components/services';
 import Testimonials from '@/components/testimonials';
 
@@ -8,8 +9,9 @@ const Page = () => {
         <div>
             <Hero />
             <Services />
-            <Feature117 />
+            <Projects />
             <Testimonials />
+            <Logos />
         </div>
     );
 };

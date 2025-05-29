@@ -1,8 +1,6 @@
-import { Avatar, AvatarImage } from '@/registry/new-york-v4/ui/avatar';
-
 import { Building2, ChevronRight, Construction, HardHat } from 'lucide-react';
 
-const Feature117 = () => {
+export default function Projects() {
     return (
         <section className='bg-base-100 py-32'>
             <div className='container mx-auto px-4 md:px-6'>
@@ -84,6 +82,4 @@ const Feature117 = () => {
             </div>
         </section>
     );
-};
-
-export { Feature117 };
+}

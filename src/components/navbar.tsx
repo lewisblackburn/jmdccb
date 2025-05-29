@@ -125,11 +125,6 @@ export default function Navbar() {
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuLink href='/careers' className={navigationMenuTriggerStyle()}>
-                                    Careers
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
                                 <NavigationMenuLink href='/news' className={navigationMenuTriggerStyle()}>
                                     News
                                 </NavigationMenuLink>
@@ -199,18 +194,15 @@ export default function Navbar() {
                                     </AccordionItem>
                                 </Accordion>
                                 <div className='flex flex-col gap-4'>
-                                    <a href='/projects' className='hover:text-accent-foreground text-sm font-medium'>
+                                    <Link href='/projects' className='hover:text-accent-foreground text-sm font-medium'>
                                         Projects
-                                    </a>
-                                    <a href='/careers' className='hover:text-accent-foreground text-sm font-medium'>
-                                        Careers
-                                    </a>
-                                    <a href='/news' className='hover:text-accent-foreground text-sm font-medium'>
+                                    </Link>
+                                    <Link href='/news' className='hover:text-accent-foreground text-sm font-medium'>
                                         News
-                                    </a>
-                                    <a href='/contact' className='hover:text-accent-foreground text-sm font-medium'>
+                                    </Link>
+                                    <Link href='/contact' className='hover:text-accent-foreground text-sm font-medium'>
                                         Contact
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className='flex flex-col gap-4 pt-4'></div>
                             </div>
