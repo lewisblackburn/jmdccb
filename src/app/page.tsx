@@ -6,7 +6,7 @@ import Testimonials from '@/components/testimonials';
 
 const Page = () => {
     return (
-        <div>
+        <div className='min-h-screen'>
             <Hero />
             <Services />
             <Projects />

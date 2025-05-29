@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Badge } from '@/registry/new-york-v4/ui/badge';
 import { Button } from '@/registry/new-york-v4/ui/button';
@@ -51,14 +52,18 @@ export default function Hero() {
                         detail, and customer satisfaction guaranteed.
                     </p>
                     <div className='mt-10 flex flex-col justify-center gap-4 sm:flex-row'>
-                        <Button size='lg' className='px-8 py-6 text-base font-medium'>
-                            Get Free Quote
-                            <MoveRight className='ml-2 size-5' strokeWidth={1.5} />
-                        </Button>
-                        <Button size='lg' variant='secondary' className='px-8 py-6 text-base font-medium'>
-                            View Our Projects
-                            <MoveRight className='ml-2 size-5' strokeWidth={1.5} />
-                        </Button>
+                        <Link href='/contact'>
+                            <Button size='lg' className='px-8 py-6 text-base font-medium'>
+                                Get Free Quote
+                                <MoveRight className='ml-2 size-5' strokeWidth={1.5} />
+                            </Button>
+                        </Link>
+                        <Link href='/projects'>
+                            <Button size='lg' variant='secondary' className='px-8 py-6 text-base font-medium'>
+                                View Our Projects
+                                <MoveRight className='ml-2 size-5' strokeWidth={1.5} />
+                            </Button>
+                        </Link>
                     </div>
                     <div className='mt-10 lg:mt-12'>
                         <ul className='flex flex-wrap justify-center gap-6 text-sm text-white/90 lg:text-base'>

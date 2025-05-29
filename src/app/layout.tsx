@@ -9,6 +9,7 @@ import '@/app/globals.css';
 import Banner from '@/components/banner';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
+import PageTransition from '@/components/page-transition';
 import { Toaster } from '@/registry/new-york-v4/ui/sonner';
 
 const geistSans = localFont({
@@ -37,7 +38,9 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
                 <ThemeProvider attribute='class'>
                     <Banner />
                     <Navbar />
-                    <main className='flex-1'>{children}</main>
+                    <main className='flex-1'>
+                        <PageTransition>{children}</PageTransition>
+                    </main>
                     <Footer />
                     <Toaster />
                 </ThemeProvider>
