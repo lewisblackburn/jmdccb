@@ -55,6 +55,10 @@ export const metadata: Metadata = {
     themeColor: '#ffffff'
 };
 
+// Enable automatic scroll restoration
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
     return (
         // ? https://github.com/pacocoursey/next-themes?tab=readme-ov-file#with-app

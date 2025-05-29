@@ -1,3 +1,5 @@
+'use client';
+
 import { type SVGProps, useId } from 'react';
 
 import PageHeader from '@/components/page-header';
@@ -14,7 +16,7 @@ export default function AboutPage() {
 
 function About() {
     return (
-        <section className='px-4 py-10 md:px-0 md:py-32'>
+        <section className='overflow-x-hidden px-4 py-10 md:px-0 md:py-32'>
             <section className='relative container mx-auto max-w-5xl py-10 md:py-12 lg:py-15'>
                 <div className=''>
                     <h1 className='text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl'>
@@ -28,11 +30,11 @@ function About() {
                     </p>
                 </div>
                 <>
-                    <div className='absolute inset-0 z-[-1] -translate-y-1/2 blur-[100px] will-change-transform'>
+                    <div className='absolute inset-0 z-[-1] -translate-y-1/2 overflow-hidden blur-[100px] will-change-transform'>
                         <div className='bg-gradient-1/25 absolute top-0 right-0 h-[400px] w-[800px] -translate-x-1/5 rounded-full' />
                         <div className='bg-gradient-2/10 absolute top-0 right-0 size-[400px] rounded-full' />
                     </div>
-                    <div className='absolute -inset-40 z-[-1] [mask-image:radial-gradient(circle_at_center,black_0%,black_20%,transparent_80%)]'>
+                    <div className='absolute -inset-40 z-[-1] overflow-hidden [mask-image:radial-gradient(circle_at_center,black_0%,black_20%,transparent_80%)]'>
                         <PlusSigns className='text-foreground/[0.05] h-full w-full' />
                     </div>
                 </>
