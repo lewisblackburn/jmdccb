@@ -42,11 +42,11 @@ export default function Hero() {
                     </span> */}
                     <h1 className='text-base-50 mt-4 text-4xl leading-tight font-bold text-balance md:text-5xl lg:text-7xl lg:leading-[1.1]'>
                         Building Dreams Into{' '}
-                        <AuroraText colors={['#e6c15b', '#f0d17a', '#f5e0a9', '#f9ecc9', '#fcf5e6']}>
+                        <AuroraText colors={['#ce2a2d', '#e64c4f', '#f06b6e', '#f8a3a5', '#ffd6d7']}>
                             Reality
                         </AuroraText>
                     </h1>
-                    <p className='text-secondary mt-4 text-lg'>
+                    <p className='text-secondary'>
                         Premium construction services for your home or business. Quality craftsmanship, attention to
                         detail, and customer satisfaction guaranteed.
                     </p>
@@ -63,15 +63,15 @@ export default function Hero() {
                     <div className='mt-10 lg:mt-12'>
                         <ul className='flex flex-wrap justify-center gap-6 text-sm text-white/90 lg:text-base'>
                             <li className='flex items-center gap-2.5 whitespace-nowrap'>
-                                <CheckCircle className='text-primary size-5' />
+                                <CheckCircle className='text-primary-500 size-5' />
                                 Licensed & Insured
                             </li>
                             <li className='flex items-center gap-2.5 whitespace-nowrap'>
-                                <CheckCircle className='text-primary size-5' />
+                                <CheckCircle className='text-primary-500 size-5' />
                                 15+ Years Experience
                             </li>
                             <li className='flex items-center gap-2.5 whitespace-nowrap'>
-                                <CheckCircle className='text-primary size-5' />
+                                <CheckCircle className='text-primary-500 size-5' />
                                 Free Consultations
                             </li>
                         </ul>

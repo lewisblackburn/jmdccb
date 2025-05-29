@@ -33,11 +33,11 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         // ? https://react.dev/reference/react-dom/client/hydrateRoot#suppressing-unavoidable-hydration-mismatch-errors
         <html suppressHydrationWarning lang='en'>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground overscroll-none antialiased`}>
+                className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground flex min-h-screen flex-col overscroll-none antialiased`}>
                 <ThemeProvider attribute='class'>
                     <Banner />
                     <Navbar />
-                    {children}
+                    <main className='flex-1'>{children}</main>
                     <Footer />
                     <Toaster />
                 </ThemeProvider>

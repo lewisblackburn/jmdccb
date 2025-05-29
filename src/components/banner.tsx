@@ -1,5 +1,7 @@
 'use client';
 
+import { companyInfo } from '@/lib/company-info';
+
 import { FacebookIcon } from './icons/FacebookIcon';
 import { InstagramIcon } from './icons/InstagramIcon';
 import { XIcon } from './icons/XIcon';
@@ -12,36 +14,26 @@ export default function Banner() {
                 <div className='flex flex-col items-center justify-between gap-2 md:flex-row md:gap-2'>
                     <div className='flex flex-col items-center gap-2 md:flex-row md:gap-6'>
                         <div className='flex items-center gap-1 md:gap-2'>
-                            <Phone className='text-primary h-3 w-3 md:h-4 md:w-4' />
-                            <span className='text-xs md:text-sm'>123-456-7890</span>
+                            <Phone className='h-3 w-3 text-[#ce2a2d] md:h-4 md:w-4' />
+                            <span className='text-xs md:text-sm'>{companyInfo.contact.phone.julian}</span>
                         </div>
                         <div className='flex items-center gap-1 md:gap-2'>
-                            <MapPin className='text-primary h-3 w-3 md:h-4 md:w-4' />
-                            <span className='text-xs md:text-sm'>123 Construction Ave, Building City, ST 12345</span>
+                            <MapPin className='h-3 w-3 text-[#ce2a2d] md:h-4 md:w-4' />
+                            <span className='text-xs md:text-sm'>
+                                {companyInfo.contact.address.street}, {companyInfo.contact.address.city},{' '}
+                                {companyInfo.contact.address.country}
+                            </span>
                         </div>
                     </div>
-
-                    <div className='flex items-center gap-4 md:gap-6'>
-                        <a
-                            href='https://facebook.com'
-                            target='_blank'
-                            rel='noreferrer'
-                            className='hover:text-foreground'>
-                            <FacebookIcon className='h-3 w-3 md:h-4 md:w-4' />
+                    <div className='flex items-center gap-4'>
+                        <a href={companyInfo.social.facebook} className='text-base-50 hover:text-[#ce2a2d]'>
+                            <FacebookIcon className='h-4 w-4' />
                         </a>
-                        <a
-                            href='https://instagram.com'
-                            target='_blank'
-                            rel='noreferrer'
-                            className='hover:text-foreground'>
-                            <InstagramIcon className='h-3 w-3 md:h-4 md:w-4' />
+                        <a href={companyInfo.social.twitter} className='text-base-50 hover:text-[#ce2a2d]'>
+                            <XIcon className='h-4 w-4' />
                         </a>
-                        <a
-                            href='https://twitter.com'
-                            target='_blank'
-                            rel='noreferrer'
-                            className='hover:text-foreground'>
-                            <XIcon className='h-3 w-3 md:h-4 md:w-4' />
+                        <a href={companyInfo.social.instagram} className='text-base-50 hover:text-[#ce2a2d]'>
+                            <InstagramIcon className='h-4 w-4' />
                         </a>
                     </div>
                 </div>
