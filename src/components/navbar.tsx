@@ -80,24 +80,9 @@ export default function Navbar() {
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
-                                <NavigationMenuContent>
-                                    <div className='grid w-[400px] grid-cols-2 gap-3 p-4'>
-                                        {aboutUsItems.map((item, index) => (
-                                            <NavigationMenuLink
-                                                href={item.href}
-                                                key={index}
-                                                className='hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none'>
-                                                <div>
-                                                    <p className='text-sm leading-none font-medium'>{item.title}</p>
-                                                    <p className='text-muted-foreground line-clamp-2 text-sm leading-snug'>
-                                                        {item.description}
-                                                    </p>
-                                                </div>
-                                            </NavigationMenuLink>
-                                        ))}
-                                    </div>
-                                </NavigationMenuContent>
+                                <NavigationMenuLink href='/about' className={navigationMenuTriggerStyle()}>
+                                    About Us
+                                </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>Services</NavigationMenuTrigger>
