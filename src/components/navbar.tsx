@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { services } from '@/data/services';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/registry/new-york-v4/ui/accordion';
 import { Button } from '@/registry/new-york-v4/ui/button';
 import {
@@ -20,28 +21,10 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/re
 
 import { MenuIcon } from 'lucide-react';
 
-const servicesItems = [
-    {
-        title: 'Consulting',
-        description: 'Expert guidance for your business',
-        href: '#'
-    },
-    {
-        title: 'Development',
-        description: 'Custom software solutions',
-        href: '#'
-    },
-    {
-        title: 'Design',
-        description: 'Creative and user-centered design',
-        href: '#'
-    },
-    {
-        title: 'Support',
-        description: '24/7 technical assistance',
-        href: '#'
-    }
-];
+const servicesItems = services.map((service) => ({
+    title: service.title,
+    href: `/services/${service.id}`
+}));
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -73,22 +56,12 @@ export default function Navbar() {
                                 <NavigationMenuTrigger className='hover:bg-accent/10 hover:text-base-50 focus:bg-accent/10 focus:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'>
                                     Services
                                 </NavigationMenuTrigger>
-                                <NavigationMenuContent className='bg-base-1000 supports-[backdrop-filter]:bg-base-1000 text-secondary border-0'>
-                                    <div className='grid w-[400px] grid-cols-2 gap-3 p-4'>
-                                        {servicesItems.map((item, index) => (
-                                            <NavigationMenuLink
-                                                href={item.href}
-                                                key={index}
-                                                className='hover:bg-accent/10 hover:text-base-50 focus:bg-accent/10 focus:text-base-50 block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none'>
-                                                <div>
-                                                    <p className='text-sm leading-none font-medium'>{item.title}</p>
-                                                    <p className='text-muted-foreground line-clamp-2 text-sm leading-snug'>
-                                                        {item.description}
-                                                    </p>
-                                                </div>
-                                            </NavigationMenuLink>
-                                        ))}
-                                    </div>
+                                <NavigationMenuContent>
+                                    {servicesItems.map((item, index) => (
+                                        <NavigationMenuLink href={item.href} key={index}>
+                                            {item.title}
+                                        </NavigationMenuLink>
+                                    ))}
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
@@ -96,13 +69,6 @@ export default function Navbar() {
                                     href='/projects'
                                     className='hover:bg-accent/10 hover:text-base-50 focus:bg-accent/10 focus:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'>
                                     Projects
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <NavigationMenuLink
-                                    href='/news'
-                                    className='hover:bg-accent/10 hover:text-base-50 focus:bg-accent/10 focus:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'>
-                                    News
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
@@ -156,10 +122,7 @@ export default function Navbar() {
                                                         key={index}
                                                         className='hover:bg-accent/10 hover:text-base-50 block rounded-md p-3 text-sm transition-colors'
                                                         onClick={() => setIsOpen(false)}>
-                                                        <div>
-                                                            <p className='font-medium'>{item.title}</p>
-                                                            <p className='text-muted-foreground'>{item.description}</p>
-                                                        </div>
+                                                        <p className='font-medium'>{item.title}</p>
                                                     </Link>
                                                 ))}
                                             </div>
@@ -171,12 +134,6 @@ export default function Navbar() {
                                     className='hover:bg-accent/10 hover:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'
                                     onClick={() => setIsOpen(false)}>
                                     Projects
-                                </Link>
-                                <Link
-                                    href='/news'
-                                    className='hover:bg-accent/10 hover:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'
-                                    onClick={() => setIsOpen(false)}>
-                                    News
                                 </Link>
                                 <Link
                                     href='/contact'

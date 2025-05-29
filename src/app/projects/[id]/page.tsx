@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useParams } from 'next/navigation';
+import { notFound, useParams } from 'next/navigation';
 
 import ImageWithSkeleton from '@/components/image-with-skeleton';
 import PageHeader from '@/components/page-header';
@@ -15,18 +15,7 @@ export default function ProjectPage() {
     const { id } = useParams();
     const project = projects.find((project) => project.id === id);
 
-    if (!project) {
-        return (
-            <section className='py-16'>
-                <div className='container mx-auto px-4'>
-                    <Alert>
-                        <AlertTitle>Project Not Found</AlertTitle>
-                        <AlertDescription>The requested project could not be found.</AlertDescription>
-                    </Alert>
-                </div>
-            </section>
-        );
-    }
+    if (!project) throw notFound();
 
     return (
         <>

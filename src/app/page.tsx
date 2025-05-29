@@ -1,3 +1,4 @@
+import Expertise from '@/components/expertise';
 import Hero from '@/components/hero';
 import Logos from '@/components/logos';
 import Projects from '@/components/projects';

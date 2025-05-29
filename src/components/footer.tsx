@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { services } from '@/data/services';
 import { companyInfo } from '@/lib/company-info';
 
 import { FacebookIcon } from './icons/FacebookIcon';
@@ -22,28 +23,25 @@ interface FooterProps {
 
 const defaultSections = [
     {
-        title: 'About Us',
-        links: [
-            { name: 'Our Story', href: '#' },
-            { name: 'Leadership', href: '#' },
-            { name: 'Values', href: '#' },
-            { name: 'Partners', href: '#' }
-        ]
-    },
-    {
         title: 'Services',
-        links: companyInfo.services.map((service) => ({
-            name: service,
-            href: '#'
+        links: services.map((service) => ({
+            name: service.title,
+            href: `/services/${service.id}`
         }))
     },
     {
         title: 'Company',
         links: [
             { name: 'Projects', href: '/projects' },
-            { name: 'Careers', href: '/careers' },
             { name: 'News', href: '/news' },
             { name: 'Contact', href: '/contact' }
+        ]
+    },
+    {
+        title: 'Legal',
+        links: [
+            { name: 'Terms and Conditions', href: '/terms' },
+            { name: 'Privacy Policy', href: '/privacy' }
         ]
     }
 ];
@@ -54,17 +52,11 @@ const defaultSocialLinks = [
     { icon: <XIcon className='size-5' />, href: companyInfo.social.twitter, label: 'Twitter' }
 ];
 
-const defaultLegalLinks: any = [
-    // { name: 'Terms and Conditions', href: '#' },
-    // { name: 'Privacy Policy', href: '#' }
-];
-
 export default function Footer({
     sections = defaultSections,
     description = companyInfo.description,
     socialLinks = defaultSocialLinks,
-    copyright = `©${new Date().getFullYear()} ${companyInfo.name}. All rights reserved.`,
-    legalLinks = defaultLegalLinks
+    copyright = `©${new Date().getFullYear()} ${companyInfo.name}. All rights reserved.`
 }: FooterProps) {
     return (
         <section className='bg-base-1000 text-base-50 py-10 lg:py-32'>
@@ -104,13 +96,6 @@ export default function Footer({
                 </div>
                 <div className='mt-8 flex flex-col justify-between gap-4 border-t py-8 text-xs font-medium md:flex-row md:items-center md:text-left'>
                     <p className='order-2 lg:order-1'>{copyright}</p>
-                    <ul className='order-1 flex flex-col gap-2 md:order-2 md:flex-row'>
-                        {legalLinks.map((link, idx) => (
-                            <li key={idx} className='hover:text-[#ce2a2d]'>
-                                <a href={link.href}> {link.name}</a>
-                            </li>
-                        ))}
-                    </ul>
                 </div>
             </div>
         </section>

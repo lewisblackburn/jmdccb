@@ -27,12 +27,11 @@ export const companyInfo = {
         }
     },
     social: {
-        facebook: 'https://facebook.com/jmdevelopments',
-        twitter: 'https://twitter.com/jmdevelopments',
-        instagram: 'https://instagram.com/jmdevelopments'
+        facebook: 'https://www.facebook.com/jmdevelopments',
+        twitter: 'https://x.com/jmdevelopments',
+        instagram: 'https://www.instagram.com/jmdevelopments'
     },
     certifications: ['Safe Contractor accreditation'],
-    services: ['Civil Engineering', 'Construction', 'Building', 'Project Management', 'Health and Safety Management'],
     team: {
         julian: {
             name: 'Julian Mills',

@@ -15,40 +15,40 @@ import {
 export default function Testimonials() {
     const testimonials = [
         {
-            name: 'John Doe',
+            name: 'Sarah Chen',
             content:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitiafugiat omnis! Porro facilis quo animi consequatur. Explicabo.Lorem ipsum dolor sit amet!Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitiaf.',
-            avatar: 'https://shadcnblocks.com/images/block/avatar-1.webp'
+                "As a property developer, I've worked with many construction companies, but this team stands out. They completed our 50-unit residential project ahead of schedule while maintaining exceptional quality. Their attention to detail and safety protocols were impressive throughout the entire process.",
+            avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop'
         },
         {
-            name: 'Jane Smith',
+            name: 'Michael Rodriguez',
             content:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitiafugiat omnis! Porro facilis quo animi consequatur. Explicabo.Lorem ipsum dolor sit amet!Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitiaf.',
-            avatar: 'https://shadcnblocks.com/images/block/avatar-2.webp'
+                'They transformed our outdated office building into a modern workspace. The project management was outstanding - they kept us informed at every step and handled unexpected challenges professionally. The quality of work exceeded our expectations, and they finished within budget.',
+            avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop'
         },
         {
-            name: 'Alex Johnson',
+            name: 'Priya Patel',
             content:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitiafugiat omnis! Porro facilis quo animi consequatur. Explicabo.Lorem ipsum dolor sit amet!Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitiaf.',
-            avatar: 'https://shadcnblocks.com/images/block/avatar-3.webp'
+                "We hired them for our restaurant renovation, and they delivered beyond our expectations. Their team's expertise in commercial construction was evident from day one. They worked around our business hours to minimize disruption, and the final result is absolutely stunning.",
+            avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop'
         },
         {
-            name: 'John Doe',
+            name: 'David Kim',
             content:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitiafugiat omnis! Porro facilis quo animi consequatur. Explicabo.Lorem ipsum dolor sit amet!Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitiaf.',
-            avatar: 'https://shadcnblocks.com/images/block/avatar-4.webp'
+                'The team handled our industrial warehouse expansion with remarkable efficiency. Their knowledge of local building codes and regulations saved us time and headaches. The project was completed 3 weeks ahead of schedule, and the quality of work is exceptional.',
+            avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop'
         },
         {
-            name: 'Jane Smith',
+            name: 'Emma Thompson',
             content:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitiafugiat omnis! Porro facilis quo animi consequatur. Explicabo.Lorem ipsum dolor sit amet!Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitiaf.',
-            avatar: 'https://shadcnblocks.com/images/block/avatar-5.webp'
+                'After a major storm damaged our property, they were quick to respond and handled the emergency repairs professionally. Their team worked efficiently to secure the building and prevent further damage. The restoration work was completed to the highest standards.',
+            avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop'
         },
         {
-            name: 'Alex Johnson',
+            name: 'James Wilson',
             content:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitiafugiat omnis! Porro facilis quo animi consequatur. Explicabo.Lorem ipsum dolor sit amet!Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitiaf.',
-            avatar: 'https://shadcnblocks.com/images/block/avatar-6.webp'
+                "We've been working with them for over 5 years on various projects, from small renovations to large-scale construction. Their consistent quality, attention to detail, and professional approach make them our go-to construction partner. They truly understand the importance of delivering on time and within budget.",
+            avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop'
         }
     ];
 
