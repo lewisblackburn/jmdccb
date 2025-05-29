@@ -1,8 +1,13 @@
+'use client';
+
+import { useParams } from 'next/navigation';
+
 import PageHeader from '@/components/page-header';
 import { projects } from '@/data/projects';
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
-    const project = projects.find((project) => project.id === params.id);
+export default function ProjectPage() {
+    const { id } = useParams();
+    const project = projects.find((project) => project.id === id);
 
     return (
         <>

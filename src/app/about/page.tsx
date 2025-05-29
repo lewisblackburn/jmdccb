@@ -7,12 +7,12 @@ export default function AboutPage() {
     return (
         <>
             <PageHeader title='About Us' description='Learn more about our company and our mission.' />
-            <About8 />
+            <About />
         </>
     );
 }
 
-export const About8 = () => {
+function About() {
     return (
         <section className='px-4 py-10 md:px-0 md:py-32'>
             <section className='relative container mx-auto max-w-5xl py-10 md:py-12 lg:py-15'>
@@ -162,13 +162,13 @@ export const About8 = () => {
             </section>
         </section>
     );
-};
+}
 
 interface PlusSignsProps extends SVGProps<SVGSVGElement> {
     className?: string;
 }
 
-const PlusSigns = ({ className, ...props }: PlusSignsProps) => {
+function PlusSigns({ className, ...props }: PlusSignsProps) {
     const GAP = 16;
     const STROKE_WIDTH = 1;
     const PLUS_SIZE = 6;
@@ -200,4 +200,4 @@ const PlusSigns = ({ className, ...props }: PlusSignsProps) => {
             <rect width='100%' height='100%' fill={`url(#${patternId})`} />
         </svg>
     );
-};
+}
