@@ -24,7 +24,9 @@ export default function Logos() {
                 <div className='border-border grid overflow-hidden rounded-xl border md:grid-cols-2'>
                     <div className='my-auto px-6 py-10 sm:px-10 sm:py-12 lg:p-16'>
                         <div className='w-full md:max-w-md'>
-                            <h2 className='mb-4 text-2xl font-semibold lg:text-3xl'>Our certifications say it all.</h2>
+                            <h2 className='mb-4 text-3xl font-bold md:text-4xl lg:text-5xl'>
+                                Our certifications say it all.
+                            </h2>
                             <p className='mb-6 text-lg'>We are proud to be certified by the following organizations.</p>
                             <Link href='/contact'>
                                 <Button className='w-full md:w-fit'>

@@ -52,7 +52,7 @@ export default function Services() {
         <section className='before:bg-primary/10 relative py-32 before:absolute before:inset-0 before:[mask-image:url(/images/block/waves.svg)] before:[mask-size:64px_32px] before:[mask-repeat:repeat]'>
             <div className='to-background absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-transparent'></div>
             <div className='relative container mx-auto px-4 md:px-6'>
-                <h2 className='mb-8 max-w-xl text-2xl font-semibold text-balance lg:text-4xl'>Our Services</h2>
+                <h2 className='mb-8 max-w-xl text-3xl font-bold text-balance md:text-4xl lg:text-5xl'>Our Services</h2>
                 <div className='z-30 grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
                     {services.map((service, index) => (
                         <Link

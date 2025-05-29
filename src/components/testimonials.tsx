@@ -55,7 +55,7 @@ export default function Testimonials() {
     return (
         <section className='bg-background py-32'>
             <div className='container mx-auto'>
-                <h1 className='text-foreground mb-10 text-center text-3xl font-bold tracking-tighter lg:text-6xl'>
+                <h1 className='text-foreground mb-10 text-center text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl'>
                     Testimonials
                 </h1>
 
