@@ -7,6 +7,7 @@ import { ThemeProvider } from 'next-themes';
 
 import '@/app/globals.css';
 import Banner from '@/components/banner';
+import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import { Toaster } from '@/registry/new-york-v4/ui/sonner';
 
@@ -37,6 +38,7 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
                     <Banner />
                     <Navbar />
                     {children}
+                    <Footer />
                     <Toaster />
                 </ThemeProvider>
             </body>

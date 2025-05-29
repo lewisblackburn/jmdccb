@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/registry/new-york-v4/ui/accordion';
@@ -65,11 +66,11 @@ const servicesItems = [
 
 export default function Navbar() {
     return (
-        <header className='sticky top-0 z-50 w-full border-b bg-white backdrop-blur supports-[backdrop-filter]:bg-white'>
-            <div className='container mx-auto flex h-16 items-center'>
+        <header className='border-accent-foreground bg-base-1000 supports-[backdrop-filter]:bg-base-1000 text-secondary sticky top-0 z-50 w-full border-b backdrop-blur'>
+            <div className='container mx-auto flex h-16 items-center px-4 lg:px-0'>
                 <nav className='flex w-full items-center justify-between'>
                     <Link href='/' className='flex items-center gap-2'>
-                        <span className='text-xl font-bold tracking-tight'>jmdccb</span>
+                        <Image src='/logo.png' alt='Logo' width={150} height={100} />
                     </Link>
                     <NavigationMenu className='ml-auto hidden lg:block'>
                         <NavigationMenuList className='gap-6'>

@@ -26,7 +26,7 @@ export default function Hero() {
     return (
         <section className={'relative py-20 md:py-28 lg:py-36'}>
             <div className='absolute inset-0 z-0'>
-                <div className='absolute inset-0 z-10 bg-black/70' />
+                <div className='bg-base-1000/70 absolute inset-0 z-10' />
                 <Image
                     src='https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1920&auto=format&fit=crop'
                     alt='Construction site background'
@@ -40,13 +40,13 @@ export default function Hero() {
                     {/* <span className='mb-2 inline-block text-sm font-bold tracking-wider text-white uppercase md:text-base'>
                         JMD Construction
                     </span> */}
-                    <h1 className='mt-4 text-4xl leading-tight font-bold text-balance text-white md:text-5xl lg:text-7xl lg:leading-[1.1]'>
+                    <h1 className='text-base-50 mt-4 text-4xl leading-tight font-bold text-balance md:text-5xl lg:text-7xl lg:leading-[1.1]'>
                         Building Dreams Into{' '}
                         <AuroraText colors={['#e6c15b', '#f0d17a', '#f5e0a9', '#f9ecc9', '#fcf5e6']}>
                             Reality
                         </AuroraText>
                     </h1>
-                    <p className='mt-4 text-lg text-white/90'>
+                    <p className='text-secondary mt-4 text-lg'>
                         Premium construction services for your home or business. Quality craftsmanship, attention to
                         detail, and customer satisfaction guaranteed.
                     </p>
