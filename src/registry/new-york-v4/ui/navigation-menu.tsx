@@ -8,28 +8,18 @@ import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import { cva } from 'class-variance-authority';
 import { ChevronDownIcon } from 'lucide-react';
 
-function NavigationMenu({
-    className,
-    children,
-    viewport = true,
-    ...props
-}: React.ComponentProps<typeof NavigationMenuPrimitive.Root> & {
-    viewport?: boolean;
-}) {
-    return (
-        <NavigationMenuPrimitive.Root
-            data-slot='navigation-menu'
-            data-viewport={viewport}
-            className={cn(
-                'group/navigation-menu relative flex max-w-max flex-1 items-center justify-center',
-                className
-            )}
-            {...props}>
-            {children}
-            {viewport && <NavigationMenuViewport />}
-        </NavigationMenuPrimitive.Root>
-    );
-}
+const NavigationMenu = React.forwardRef<
+    React.ElementRef<typeof NavigationMenuPrimitive.Root>,
+    React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>
+>(({ className, children, ...props }, ref) => (
+    <NavigationMenuPrimitive.Root
+        ref={ref}
+        className={cn('relative z-10 flex max-w-max flex-1 items-center justify-center', className)}
+        {...props}>
+        {children}
+        {/* <NavigationMenuViewport /> */}
+    </NavigationMenuPrimitive.Root>
+));
 
 function NavigationMenuList({ className, ...props }: React.ComponentProps<typeof NavigationMenuPrimitive.List>) {
     return (
@@ -74,19 +64,22 @@ function NavigationMenuTrigger({
     );
 }
 
-function NavigationMenuContent({ className, ...props }: React.ComponentProps<typeof NavigationMenuPrimitive.Content>) {
-    return (
-        <NavigationMenuPrimitive.Content
-            data-slot='navigation-menu-content'
-            className={cn(
-                'data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 top-0 left-0 w-full p-2 pr-2.5 md:absolute md:w-auto',
-                'group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:text-popover-foreground group-data-[viewport=false]/navigation-menu:data-[state=open]:animate-in group-data-[viewport=false]/navigation-menu:data-[state=closed]:animate-out group-data-[viewport=false]/navigation-menu:data-[state=closed]:zoom-out-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:zoom-in-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:fade-in-0 group-data-[viewport=false]/navigation-menu:data-[state=closed]:fade-out-0 group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5 group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:rounded-md group-data-[viewport=false]/navigation-menu:border group-data-[viewport=false]/navigation-menu:shadow group-data-[viewport=false]/navigation-menu:duration-200 **:data-[slot=navigation-menu-link]:focus:ring-0 **:data-[slot=navigation-menu-link]:focus:outline-none',
-                className
-            )}
-            {...props}
-        />
-    );
-}
+const NavigationMenuContent = React.forwardRef<
+    React.ElementRef<typeof NavigationMenuPrimitive.Content>,
+    React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Content>
+>(({ className, ...props }, ref) => (
+    <NavigationMenuPrimitive.Content
+        ref={ref}
+        className={cn(
+            'absolute left-0',
+            'bg-popover absolute top-full mt-[5px] w-fit',
+            'data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52',
+            'origin-top-center bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 absolute mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border shadow-lg md:w-[var(--radix-navigation-menu-viewport-width)]',
+            className
+        )}
+        {...props}
+    />
+));
 
 function NavigationMenuViewport({
     className,
