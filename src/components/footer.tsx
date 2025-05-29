@@ -54,9 +54,9 @@ const defaultSocialLinks = [
     { icon: <XIcon className='size-5' />, href: companyInfo.social.twitter, label: 'Twitter' }
 ];
 
-const defaultLegalLinks = [
-    { name: 'Terms and Conditions', href: '#' },
-    { name: 'Privacy Policy', href: '#' }
+const defaultLegalLinks: any = [
+    // { name: 'Terms and Conditions', href: '#' },
+    // { name: 'Privacy Policy', href: '#' }
 ];
 
 export default function Footer({
