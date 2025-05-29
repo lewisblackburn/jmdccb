@@ -44,13 +44,15 @@ export default function Contact() {
         try {
             const recipient = 'lewisblackburn10@gmail.com';
 
-            const emailBody = {
-                name: data.fullName,
-                email: data.email,
-                phone: data.phone,
-                subject: data.subject,
-                message: data.message
-            };
+            const emailBody = `
+Name: ${data.fullName}
+Email: ${data.email}
+${data.phone ? `Phone: ${data.phone}` : ''}
+Subject: ${data.subject}
+
+Message:
+${data.message}
+            `.trim();
 
             const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(emailBody)}`;
 
