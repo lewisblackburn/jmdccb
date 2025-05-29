@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 
+import ImageWithSkeleton from '@/components/image-with-skeleton';
 import PageHeader from '@/components/page-header';
 import { projects } from '@/data/projects';
 import { Alert, AlertDescription, AlertTitle } from '@/registry/new-york-v4/ui/alert';
@@ -34,12 +35,12 @@ export default function ProjectPage() {
                 <div className='container mx-auto px-4'>
                     <div className='grid gap-12 lg:grid-cols-3'>
                         <div className='space-y-12 lg:col-span-2'>
-                            <Image
+                            <ImageWithSkeleton
                                 src={project.image}
                                 alt={project.title}
                                 width={1000}
                                 height={1000}
-                                className='aspect-video w-full rounded-lg object-cover'
+                                imageClassName='aspect-video w-full rounded-lg object-cover'
                             />
 
                             <div className='space-y-8'>

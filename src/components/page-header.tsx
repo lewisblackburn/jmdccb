@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ImageWithSkeleton from './image-with-skeleton';
 
 interface PageHeaderProps {
     title: string;
@@ -15,10 +15,10 @@ export default function PageHeader({
         <section className={'relative py-12 md:py-16 lg:py-20'}>
             <div className='absolute inset-0 z-0'>
                 <div className='bg-base-1000/70 absolute inset-0 z-10' />
-                <Image
+                <ImageWithSkeleton
                     src={backgroundImage}
                     alt={`${title} page background`}
-                    className='h-full w-full object-cover'
+                    imageClassName='h-full w-full object-cover'
                     fill
                     priority
                 />

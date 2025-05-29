@@ -1,9 +1,9 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { Badge } from '@/registry/new-york-v4/ui/badge';
 import { Button } from '@/registry/new-york-v4/ui/button';
 
+import ImageWithSkeleton from './image-with-skeleton';
 import { AuroraText } from './magicui/aurora-text';
 import { HyperText } from './magicui/hyper-text';
 import { SparklesText } from './magicui/sparkles-text';
@@ -28,10 +28,10 @@ export default function Hero() {
         <section className={'relative py-20 md:py-28 lg:py-36'}>
             <div className='absolute inset-0 z-0'>
                 <div className='bg-base-1000/70 absolute inset-0 z-10' />
-                <Image
+                <ImageWithSkeleton
                     src='https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1920&auto=format&fit=crop'
                     alt='Construction site background'
-                    className='h-full w-full object-cover'
+                    imageClassName='h-full w-full object-cover'
                     fill
                 />
             </div>
