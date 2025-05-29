@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -17,29 +19,6 @@ import {
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/registry/new-york-v4/ui/sheet';
 
 import { MenuIcon } from 'lucide-react';
-
-const aboutUsItems = [
-    {
-        title: 'Our Story',
-        description: 'Learn about our journey and mission',
-        href: '#'
-    },
-    {
-        title: 'Leadership',
-        description: 'Meet our team of experts',
-        href: '#'
-    },
-    {
-        title: 'Values',
-        description: 'Our core principles and beliefs',
-        href: '#'
-    },
-    {
-        title: 'Partners',
-        description: 'Our trusted collaborators',
-        href: '#'
-    }
-];
 
 const servicesItems = [
     {
@@ -65,6 +44,8 @@ const servicesItems = [
 ];
 
 export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <header className='border-accent-foreground bg-base-1000 supports-[backdrop-filter]:bg-base-1000 text-secondary sticky top-0 z-50 w-full border-b backdrop-blur'>
             <div className='container mx-auto flex h-16 items-center px-4 lg:px-0'>
@@ -75,24 +56,30 @@ export default function Navbar() {
                     <NavigationMenu className='ml-auto hidden lg:block'>
                         <NavigationMenuList className='gap-6'>
                             <NavigationMenuItem>
-                                <NavigationMenuLink href='/' className={navigationMenuTriggerStyle()}>
+                                <NavigationMenuLink
+                                    href='/'
+                                    className='hover:bg-accent/10 hover:text-base-50 focus:bg-accent/10 focus:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'>
                                     Home
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuLink href='/about' className={navigationMenuTriggerStyle()}>
+                                <NavigationMenuLink
+                                    href='/about'
+                                    className='hover:bg-accent/10 hover:text-base-50 focus:bg-accent/10 focus:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'>
                                     About Us
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-                                <NavigationMenuContent>
+                                <NavigationMenuTrigger className='hover:bg-accent/10 hover:text-base-50 focus:bg-accent/10 focus:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'>
+                                    Services
+                                </NavigationMenuTrigger>
+                                <NavigationMenuContent className='bg-base-1000 supports-[backdrop-filter]:bg-base-1000 text-secondary border-0'>
                                     <div className='grid w-[400px] grid-cols-2 gap-3 p-4'>
                                         {servicesItems.map((item, index) => (
                                             <NavigationMenuLink
                                                 href={item.href}
                                                 key={index}
-                                                className='hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none'>
+                                                className='hover:bg-accent/10 hover:text-base-50 focus:bg-accent/10 focus:text-base-50 block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none'>
                                                 <div>
                                                     <p className='text-sm leading-none font-medium'>{item.title}</p>
                                                     <p className='text-muted-foreground line-clamp-2 text-sm leading-snug'>
@@ -105,91 +92,98 @@ export default function Navbar() {
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuLink href='/projects' className={navigationMenuTriggerStyle()}>
+                                <NavigationMenuLink
+                                    href='/projects'
+                                    className='hover:bg-accent/10 hover:text-base-50 focus:bg-accent/10 focus:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'>
                                     Projects
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuLink href='/news' className={navigationMenuTriggerStyle()}>
+                                <NavigationMenuLink
+                                    href='/news'
+                                    className='hover:bg-accent/10 hover:text-base-50 focus:bg-accent/10 focus:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'>
                                     News
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuLink href='/contact' className={navigationMenuTriggerStyle()}>
+                                <NavigationMenuLink
+                                    href='/contact'
+                                    className='hover:bg-accent/10 hover:text-base-50 focus:bg-accent/10 focus:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'>
                                     Contact
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
-                    <Sheet>
+                    <Sheet open={isOpen} onOpenChange={setIsOpen}>
                         <SheetTrigger asChild className='ml-auto lg:hidden'>
-                            <Button variant='ghost' size='icon'>
+                            <Button variant='ghost' size='icon' className='hover:bg-accent/10 hover:text-base-50'>
                                 <MenuIcon className='h-5 w-5' />
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side='right' className='w-[300px] sm:w-[400px]'>
-                            <SheetHeader>
+                        <SheetContent
+                            side='top'
+                            className='border-accent-foreground bg-base-1000 supports-[backdrop-filter]:bg-base-1000 text-secondary w-full'>
+                            <SheetHeader className='border-accent-foreground border-b pb-4'>
                                 <SheetTitle>
-                                    <a href='/' className='flex items-center gap-2'>
-                                        <span className='text-xl font-bold tracking-tight'>jmdccb</span>
-                                    </a>
+                                    <Link href='/' className='flex items-center gap-2' onClick={() => setIsOpen(false)}>
+                                        <Image src='/logo.png' alt='Logo' width={150} height={100} />
+                                    </Link>
                                 </SheetTitle>
                             </SheetHeader>
-                            <div className='flex flex-col gap-6 py-6'>
+                            <div className='flex flex-col space-y-4 px-4 pt-2 pb-6'>
+                                <Link
+                                    href='/'
+                                    className='hover:bg-accent/10 hover:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'
+                                    onClick={() => setIsOpen(false)}>
+                                    Home
+                                </Link>
+                                <Link
+                                    href='/about'
+                                    className='hover:bg-accent/10 hover:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'
+                                    onClick={() => setIsOpen(false)}>
+                                    About Us
+                                </Link>
                                 <Accordion type='single' collapsible className='w-full'>
-                                    <AccordionItem value='about' className='border-none'>
-                                        <AccordionTrigger className='text-base hover:no-underline'>
-                                            About Us
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            <div className='grid gap-2'>
-                                                {aboutUsItems.map((item, index) => (
-                                                    <a
-                                                        href={item.href}
-                                                        key={index}
-                                                        className='hover:bg-accent hover:text-accent-foreground block rounded-md p-2 text-sm'>
-                                                        <div>
-                                                            <p className='font-medium'>{item.title}</p>
-                                                            <p className='text-muted-foreground'>{item.description}</p>
-                                                        </div>
-                                                    </a>
-                                                ))}
-                                            </div>
-                                        </AccordionContent>
-                                    </AccordionItem>
                                     <AccordionItem value='services' className='border-none'>
-                                        <AccordionTrigger className='text-base hover:no-underline'>
+                                        <AccordionTrigger className='hover:bg-accent/10 hover:text-base-50 rounded-md px-4 py-2 text-base transition-colors hover:no-underline'>
                                             Services
                                         </AccordionTrigger>
                                         <AccordionContent>
-                                            <div className='grid gap-2'>
+                                            <div className='grid gap-3 px-4 pt-2'>
                                                 {servicesItems.map((item, index) => (
-                                                    <a
+                                                    <Link
                                                         href={item.href}
                                                         key={index}
-                                                        className='hover:bg-accent hover:text-accent-foreground block rounded-md p-2 text-sm'>
+                                                        className='hover:bg-accent/10 hover:text-base-50 block rounded-md p-3 text-sm transition-colors'
+                                                        onClick={() => setIsOpen(false)}>
                                                         <div>
                                                             <p className='font-medium'>{item.title}</p>
                                                             <p className='text-muted-foreground'>{item.description}</p>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 ))}
                                             </div>
                                         </AccordionContent>
                                     </AccordionItem>
                                 </Accordion>
-                                <div className='flex flex-col gap-4'>
-                                    <Link href='/projects' className='hover:text-accent-foreground text-sm font-medium'>
-                                        Projects
-                                    </Link>
-                                    <Link href='/news' className='hover:text-accent-foreground text-sm font-medium'>
-                                        News
-                                    </Link>
-                                    <Link href='/contact' className='hover:text-accent-foreground text-sm font-medium'>
-                                        Contact
-                                    </Link>
-                                </div>
-                                <div className='flex flex-col gap-4 pt-4'></div>
+                                <Link
+                                    href='/projects'
+                                    className='hover:bg-accent/10 hover:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'
+                                    onClick={() => setIsOpen(false)}>
+                                    Projects
+                                </Link>
+                                <Link
+                                    href='/news'
+                                    className='hover:bg-accent/10 hover:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'
+                                    onClick={() => setIsOpen(false)}>
+                                    News
+                                </Link>
+                                <Link
+                                    href='/contact'
+                                    className='hover:bg-accent/10 hover:text-base-50 rounded-md px-4 py-2 text-base font-medium transition-colors'
+                                    onClick={() => setIsOpen(false)}>
+                                    Contact
+                                </Link>
                             </div>
                         </SheetContent>
                     </Sheet>
