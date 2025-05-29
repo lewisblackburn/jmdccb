@@ -57,7 +57,7 @@ export default function Navbar() {
                                     Services
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent className='border-accent-foreground bg-base-1000 supports-[backdrop-filter]:bg-base-1000 text-secondary p-6'>
-                                    <div className='grid w-[400px] grid-cols-2 gap-4'>
+                                    <div className='grid w-[200px] grid-cols-1 gap-4 2xl:w-[400px] 2xl:grid-cols-2'>
                                         {servicesItems.map((item, index) => (
                                             <NavigationMenuLink
                                                 href={item.href}
