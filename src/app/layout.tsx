@@ -35,7 +35,7 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         <html suppressHydrationWarning lang='en'>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground flex min-h-screen flex-col overscroll-none antialiased`}>
-                <ThemeProvider attribute='class'>
+                <ThemeProvider attribute='class' forcedTheme='light'>
                     <Banner />
                     <Navbar />
                     <main className='flex-1'>

@@ -45,18 +45,28 @@ export default function Contact() {
             const recipient = 'lewisblackburn10@gmail.com';
 
             const emailBody = `
-Dear ${recipient},
+<html>
+<body style="font-family: Arial, sans-serif; line-height: 1.6;">
+    <h2 style="color: #333;">New Contact Form Submission</h2>
+    
+    <div style="margin: 20px 0;">
+        <p><strong>From:</strong> ${data.fullName}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        ${data.phone ? `<p><strong>Phone:</strong> ${data.phone}</p>` : ''}
+        <p><strong>Subject:</strong> ${data.subject}</p>
+    </div>
 
-${data.message}
+    <div style="margin: 20px 0;">
+        <h3 style="color: #333;">Message:</h3>
+        <p style="white-space: pre-wrap;">${data.message}</p>
+    </div>
 
-Best regards,
-${data.fullName}
-
----
-Contact Information:
-Email: ${data.email}
-${data.phone ? `Phone: ${data.phone}` : ''}
-Subject: ${data.subject}
+    <hr style="border: 1px solid #eee; margin: 20px 0;">
+    <p style="color: #666; font-size: 0.9em;">
+        This message was sent from the contact form on ${window.location.origin}
+    </p>
+</body>
+</html>
             `.trim();
 
             const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(emailBody)}`;
