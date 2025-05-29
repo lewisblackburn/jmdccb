@@ -8,12 +8,14 @@ const logos = [
     {
         id: 'ssip',
         description: 'SSIP',
-        image: '/images/ssip.webp'
+        image: '/images/ssip.webp',
+        url: 'https://www.ssip.org.uk/'
     },
     {
         id: 'safe-contractor',
         description: 'Safe Contractor',
-        image: '/images/safe-contractor.webp'
+        image: '/images/safe-contractor.webp',
+        url: 'https://www.safecontractor.com/'
     }
 ];
 
@@ -41,10 +43,12 @@ export default function Logos() {
                             <div
                                 key={logo.id}
                                 className='border-border -mb-px flex items-center justify-center border-r border-b p-5 nth-[3n]:border-r-0 sm:p-6'>
-                                <img
-                                    src={logo.image}
-                                    alt={logo.description}
-                                    className='size-12 object-cover object-center sm:size-16 lg:size-24'></img>
+                                <Link href={logo.url} target='_blank' rel='noopener noreferrer'>
+                                    <img
+                                        src={logo.image}
+                                        alt={logo.description}
+                                        className='size-12 object-cover object-center sm:size-16 lg:size-24'></img>
+                                </Link>
                             </div>
                         ))}
                     </div>

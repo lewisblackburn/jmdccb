@@ -4,6 +4,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+    --breakpoint-3xl: 1920px;
+}
+
 :root {
     --base-50: oklch(0.9817 0.0057 264.53);
     --base-100: oklch(0.967 0.0063 266.68);
