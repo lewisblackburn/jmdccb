@@ -29,7 +29,7 @@ export default function Logos() {
                             <h2 className='mb-4 text-3xl font-bold md:text-4xl lg:text-5xl'>
                                 Our certifications say it all.
                             </h2>
-                            <p className='mb-6 text-lg'>We are proud to be certified by the following organizations.</p>
+                            <p className='mb-6 text-lg'>We are proud to be certified by the following organisations.</p>
                             <Link href='/contact'>
                                 <Button className='w-full md:w-fit'>
                                     <ArrowRight className='mr-2 size-5' />
