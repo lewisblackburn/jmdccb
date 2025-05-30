@@ -26,6 +26,19 @@ const geistMono = localFont({
 export const metadata: Metadata = {
     title: 'JMDCCB',
     description: 'JMDCCB - Your trusted construction and contracting partner',
+    openGraph: {
+        title: 'JMDCCB',
+        description: 'JMDCCB - Your trusted construction and contracting partner',
+        images: [
+            {
+                url: '/images/og.webp',
+                width: 1200,
+                height: 630,
+                alt: 'JMDCCB'
+            }
+        ],
+        type: 'website'
+    },
     icons: {
         icon: [
             { url: '/images/favicon.ico' },

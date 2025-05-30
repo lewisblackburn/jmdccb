@@ -64,7 +64,12 @@ export default function Footer({
                     <div className='flex w-full flex-col justify-between gap-6 lg:items-start'>
                         <div className='flex items-center gap-2 lg:justify-start'>
                             <Link href='/'>
-                                <Image src='/logo.png' alt={`${companyInfo.name} logo`} width={150} height={100} />
+                                <Image
+                                    src='/images/logo.png'
+                                    alt={`${companyInfo.name} logo`}
+                                    width={150}
+                                    height={100}
+                                />
                             </Link>
                         </div>
                         <p className='max-w-[70%] text-sm'>{description}</p>

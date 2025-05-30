@@ -34,7 +34,7 @@ export default function Navbar() {
             <div className='container mx-auto flex h-16 items-center px-4 lg:px-0'>
                 <nav className='flex w-full items-center justify-between'>
                     <Link href='/' className='flex items-center gap-2'>
-                        <Image src='/logo.png' alt='Logo' width={150} height={100} />
+                        <Image src='/images/logo.png' alt='Logo' width={150} height={100} />
                     </Link>
                     <NavigationMenu className='ml-auto hidden lg:block'>
                         <NavigationMenuList className='gap-6'>
@@ -98,7 +98,7 @@ export default function Navbar() {
                             <SheetHeader className='border-accent-foreground border-b pb-4'>
                                 <SheetTitle>
                                     <Link href='/' className='flex items-center gap-2' onClick={() => setIsOpen(false)}>
-                                        <Image src='/logo.png' alt='Logo' width={150} height={100} />
+                                        <Image src='/images/logo.png' alt='Logo' width={150} height={100} />
                                     </Link>
                                 </SheetTitle>
                             </SheetHeader>
