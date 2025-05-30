@@ -77,6 +77,12 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         // ? https://github.com/pacocoursey/next-themes?tab=readme-ov-file#with-app
         // ? https://react.dev/reference/react-dom/client/hydrateRoot#suppressing-unavoidable-hydration-mismatch-errors
         <html suppressHydrationWarning lang='en'>
+            <head>
+                <link rel='icon' href='/images/favicon.ico' />
+                <link rel='icon' href='/images/favicon-16x16.png' sizes='16x16' type='image/png' />
+                <link rel='icon' href='/images/favicon-32x32.png' sizes='32x32' type='image/png' />
+                <link rel='apple-touch-icon' href='/images/apple-touch-icon.png' sizes='180x180' type='image/png' />
+            </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground flex min-h-screen flex-col overscroll-none antialiased`}>
                 <ThemeProvider attribute='class' forcedTheme='light'>
